@@ -15,44 +15,47 @@ public class TowerBase : MonoBehaviour
     [Header("Maching_Gun_Tower")]
     public int machine_gun_tower_hp;
     public int machine_gun_tower_damage;
-    public int machine_gun_tower_fire_rate;
+    public float machine_gun_tower_fire_rate;
     public int machine_gun_tower_range;
     public int machine_gun_tower_hp_up1;
     public int machine_gun_tower_damage_up1;
-    public int machine_gun_tower_fire_rate_up1;
+    public float  machine_gun_tower_fire_rate_up1;
     public int machine_gun_tower_range_up1;
     public int machine_gun_tower_hp_up2;
     public int machine_gun_tower_damage_up2;
-    public int machine_gun_tower_fire_rate_up2;
+    public float  machine_gun_tower_fire_rate_up2;
     public int machine_gun_tower_range_up2;
+    public Gun machine_gun;
 
     [Header("Sniper_Tower")]
     public int sniper_tower_hp;
     public int sniper_tower_damage;
-    public int sniper_tower_fire_rate;
+    public float sniper_tower_fire_rate;
     public int sniper_tower_range;
     public int sniper_tower_hp_up1;
     public int sniper_tower_damage_up1;
-    public int sniper_tower_fire_rate_up1;
+    public float  sniper_tower_fire_rate_up1;
     public int sniper_tower_range_up1;
     public int sniper_tower_hp_up2;
     public int sniper_tower_damage_up2;
-    public int sniper_tower_fire_rate_up2;
+    public float sniper_tower_fire_rate_up2;
     public int sniper_tower_range_up2;
+    public Gun sniper_gun;
 
     [Header("Rocket_Tower")]
     public int rocket_tower_hp;
     public int rocket_tower_damage;
-    public int rocket_tower_fire_rate;
+    public float  rocket_tower_fire_rate;
     public int rocket_tower_range;
     public int rocket_tower_hp_up1;
     public int rocket_tower_damage_up1;
-    public int rocket_tower_fire_rate_up1;
+    public float  rocket_tower_fire_rate_up1;
     public int rocket_tower_range_up1;
     public int rocket_tower_hp_up2;
     public int rocket_tower_damage_up2;
-    public int rocket_tower_fire_rate_up2;
+    public float rocket_tower_fire_rate_up2;
     public int rocket_tower_range_up2;
+    public Gun rocket_gun;
 
 
 
@@ -94,7 +97,7 @@ public class TowerBase : MonoBehaviour
         {
             current_tower = (Tower)current_build;
             //sr.sprite = machine_lvl_1;
-            current_tower.attack(current_tower.damage);
+            current_tower.attack();
         }
 
         else if (current_build is Barricade)
@@ -147,19 +150,19 @@ public class TowerBase : MonoBehaviour
              GUI.Box(rect,"Buying Tower");
              if(GUI.Button(rect1,"Machine Gun"))
              {
-                 current_build = new Machine_Gun_Tower(1,1,1,1);
+                 current_build = new Machine_Gun_Tower(1,1,1,1,machine_gun);
                  sr.sprite = machine_lvl_1;
                  PopUp = false;
              }
              if (GUI.Button(rect2,"Sniper Gun"))
              {
-                 current_build = new Sniper_Gun_Tower(10,100,10,1);
+                 current_build = new Sniper_Gun_Tower(10,100,10,1,sniper_gun);
                  sr.sprite = sniper_tower_lvl_1;
                  PopUp = false;
              }
              if (GUI.Button(rect3,"Rocket Gun"))
              {
-                 current_build = new Rocket_Gun_Tower(3,10,50,10);
+                 current_build = new Rocket_Gun_Tower(rocket_tower_hp,rocket_tower_range,rocket_tower_damage,rocket_tower_fire_rate,rocket_gun);
                  sr.sprite = rocket_tower_lvl_1;
                  PopUp = false;
              }

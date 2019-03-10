@@ -21,7 +21,7 @@ public class HurtPlayer : MonoBehaviour {
         {
             other.gameObject.GetComponentInParent<PlayerHealthManager>().TakeDamage(damage_to_give);
             
-            ////Pick knockback direction
+            //Pick knockback direction
             //if (other.gameObject.transform.position.x < transform.position.x)  //Knock left
             //{
             //    other.gameObject.GetComponentInParent<Knockback>().DoKnockBack(0);

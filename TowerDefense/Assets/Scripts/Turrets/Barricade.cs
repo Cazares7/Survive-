@@ -19,7 +19,7 @@ public class Barricade : Building
         }
         set
         {
-            
+            _hp = hp;
         }
     }
     

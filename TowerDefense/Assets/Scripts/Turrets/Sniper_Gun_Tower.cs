@@ -7,14 +7,28 @@ public class Sniper_Gun_Tower : Tower
     int _hp;
     int _range;
     int _damage;
-    int _fire_rate;
+    float _fire_rate;
+    Gun _turret_gun;
 
-    public Sniper_Gun_Tower(int hp, int range, int damage, int fire_rate)
+    public Sniper_Gun_Tower(int hp, int range, int damage, float fire_rate, Gun turret_gun)
     {
         _hp = hp;
         _range = range;
         _damage = damage;
         _fire_rate = fire_rate;
+        _turret_gun = turret_gun;
+    }
+
+    public override Gun turret_gun
+    {
+        get
+        {
+            return _turret_gun;
+        }
+        set
+        {
+            _turret_gun = turret_gun;
+        }
     }
 
     
@@ -48,7 +62,7 @@ public class Sniper_Gun_Tower : Tower
             _damage = damage;
         }
     }
-    public override int fire_rate
+    public override float fire_rate
     {
         get
         {

@@ -35,7 +35,7 @@ public class EnemyHealthManager : MonoBehaviour {
             //Death effect
             //Instantiate(death_effect, death_effect_pos.transform.position, Quaternion.identity);
 
-            ////DropLoot
+            //DropLoot
             //FindObjectOfType<LootManager>().GetComponent<LootManager>().CalculateLoot(GetComponent<Transform>());
 
             Destroy(gameObject);
