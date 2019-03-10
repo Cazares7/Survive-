@@ -8,6 +8,8 @@ public class Tower_Projectile : MonoBehaviour
     public float life_time;
     Vector2 direction;
 
+    public GameObject tile;
+
     public GameObject hit_effect;
 
     Rigidbody2D rb;
@@ -17,7 +19,9 @@ public class Tower_Projectile : MonoBehaviour
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         Invoke("DestroyProjectile", life_time);
-        rb.velocity = new Vector2(500 * speed, 100 * speed);
+        Vector3 direction = tile.transform.position + new Vector3(3,100,0);
+        direction = direction.normalized;
+        rb.velocity = new Vector2( direction.x * speed , direction.y  * speed );
 	}
 	
 	// Update is called once per frame
@@ -35,6 +39,7 @@ public class Tower_Projectile : MonoBehaviour
                 Instantiate(hit_effect, transform.position, Quaternion.identity);
             //hit_sound.Play();
         }
+
     }
 
     void DestroyProjectile ()

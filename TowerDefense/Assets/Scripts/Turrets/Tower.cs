@@ -30,6 +30,9 @@ abstract public class Tower : Building
     }
 
     private float time_between_shots = 0;
+    private Vector3 adjust = new Vector3(0,0.2f,0);
+    Vector3 mouse_position;
+    float d_x, d_y;
 
     public void attack()
     {     
@@ -42,7 +45,7 @@ abstract public class Tower : Building
 
        else
        {
-        GameObject.Instantiate(turret_gun.bullet_prefab, turret_gun.shoot_pos.position, turret_gun.shoot_pos.rotation );
+        GameObject.Instantiate(turret_gun.bullet_prefab, turret_gun.shoot_pos.position + adjust, turret_gun.shoot_pos.rotation );
         time_between_shots = 0;
        } 
     }

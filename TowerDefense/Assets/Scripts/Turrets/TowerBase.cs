@@ -64,6 +64,7 @@ public class TowerBase : MonoBehaviour
     private SpriteRenderer sr;
     
     private bool PopUp;
+    private Vector3 mousePosition;
 
 
 
@@ -95,9 +96,12 @@ public class TowerBase : MonoBehaviour
     {
         if (current_build is Tower)
         {
+            mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             current_tower = (Tower)current_build;
             //sr.sprite = machine_lvl_1;
             current_tower.attack();
+            transform.eulerAngles = new Vector3(0,0,Mathf.Atan2((mousePosition.y - transform.position.y), (mousePosition.x - transform.position.x))*Mathf.Rad2Deg - 90);;
         }
 
         else if (current_build is Barricade)

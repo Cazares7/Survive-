@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0519fbf85aa76ec42ace219652130390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 25
+  life_time: 0.25
+  tile: {fileID: 2685450306734769460, guid: ba78000274bd12345b634f72afe1fa89, type: 3}
+  hit_effect: {fileID: 1324007397659048, guid: cde1287021308e24db6e7eadd7bd2ce2, type: 3}
+  sniper_bullet: 0
 --- !u!1001 &7762522617567259234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,7 +26,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1417103884805034, guid: 439194a06ac77bf46b07a85502302658, type: 3}
       propertyPath: m_Name
-      value: Rocket_Projectile
+      value: Rocket_Projectile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4783701255087356, guid: 439194a06ac77bf46b07a85502302658, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,6 +70,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4783701255087356, guid: 439194a06ac77bf46b07a85502302658, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50656775536517498, guid: 439194a06ac77bf46b07a85502302658,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50656775536517498, guid: 439194a06ac77bf46b07a85502302658,
+        type: 3}
+      propertyPath: m_SleepingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61171157561201410, guid: 439194a06ac77bf46b07a85502302658,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
